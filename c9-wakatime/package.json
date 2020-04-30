@@ -1,0 +1,36 @@
+{
+  "name": "wakatime",
+  "description": "Metrics, insights, and time tracking automatically generated from your programming activity.",
+  "version": "3.0.2",
+  "author": "WakaTime",
+  "contributors": [
+    {
+      "name": "Alan Hamlett",
+      "email": "alan@wakatime.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/wakatime/c9-wakatime.git"
+  },
+  "plugins": {
+    "wakatime": {
+      "packagePath": "plugins/wakatime/wakatime"
+    }
+  },
+  "engines": {
+    "c9": ">=3.0.0"
+  },
+  "categories": [
+    "miscellaneous"
+  ],
+  "license": "BSD-3-Clause",
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/wakatime/c9-wakatime/blob/master/LICENSE"
+    }
+  ],
+  "installer": "install.js",
+  "permissions": "world"
+}

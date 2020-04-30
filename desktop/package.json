@@ -1,0 +1,113 @@
+{
+  "name": "wakatime-desktop",
+  "version": "0.0.1",
+  "author": "WakaTime",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/wakatime/wakatime-desktop",
+  "description": "The WakaTime desktop app.",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "npm run build && npm run watch",
+    "start": "electron dist/app.js",
+    "cache:clean": "rimraf node_modules/.cache",
+    "eslint": "eslint --ext ts --ext tsx .",
+    "eslint:fix": "eslint --ext ts --ext tsx --fix .",
+    "build": "npm run build:clean && npm run build:webpack",
+    "build:clean": "rimraf dist out",
+    "build:webpack": "webpack --mode production",
+    "generate:imgPaths": "ts-node scripts/createImgConstFiles.ts && npm run eslint:fix",
+    "watch": "nf start",
+    "watch:webpack": "webpack --mode development --watch",
+    "watch:webpack-server": "webpack-dev-server",
+    "upgrade": "yarn upgrade --latest",
+    "test": "mocha --require ts-node/register test/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wakatime/wakatime-desktop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wakatime/wakatime-desktop/issues"
+  },
+  "keywords": [
+    "quantified self",
+    "time tracking"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/electron": "^1.6.10",
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@types/lodash": "^4.14.136",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^13.1.7",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-redux": "^7.1.1",
+    "@types/redux": "^3.6.0",
+    "@types/sinon": "^7.0.11",
+    "@types/unzipper": "^0.10.0",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "cache-loader": "^4.1.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.1.0",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.1",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "redux-devtools-cli": "^0.0.1-1",
+    "sinon": "^7.3.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "typescript-eslint-parser": "^22.0.0",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "aphrodite": "^2.3.1",
+    "electron": "^6.0.7",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-tray-window": "^1.2.5",
+    "find-in-files": "^0.5.0",
+    "foreman": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.15",
+    "plist": "^3.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-with-styles": "^4.0.1",
+    "react-with-styles-interface-aphrodite": "^5.0.1",
+    "readdirp": "^3.1.2",
+    "redux": "^4.0.4",
+    "registry-js": "^1.8.0",
+    "remote-redux-devtools": "^0.5.16",
+    "request": "^2.88.0",
+    "rimraf": "^3.0.0",
+    "ts-loader": "^6.0.4",
+    "unzipper": "^0.10.4",
+    "webpack": "^4.38.0",
+    "winreg": "^1.2.4",
+    "yarn": "^1.22.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ]
+    }
+  }
+}

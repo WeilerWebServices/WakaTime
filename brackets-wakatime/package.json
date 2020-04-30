@@ -1,0 +1,12 @@
+{
+    "name": "brackets-wakatime",
+    "title": "WakaTime",
+    "description": "Automatic time tracking and metrics about your programming.",
+    "homepage": "https://github.com/wakatime/brackets-wakatime",
+    "version": "1.0.8",
+    "author": "WakaTime.com",
+    "license": "BSD",
+    "engines": {
+        "brackets": ">=0.24.0"
+    }
+}

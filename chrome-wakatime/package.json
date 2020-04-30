@@ -1,0 +1,71 @@
+{
+  "scripts": {
+    "test": "jest --verbose --coverage && mocha --compilers js:mocha-traceur tests/**/*.spec.js",
+    "test-react": "jest --verbose --coverage",
+    "test-js": "node_modules/.bin/phantomjs tests/run.js",
+    "start": "npm install && bower install && gulp",
+    "gulp": "gulp",
+    "watch": "gulp watch",
+    "lint": "jsxhint --jsx-only .",
+    "postinstall": "gulp postinstall",
+    "validate": "npm ls"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "jest": {
+    "testFileExtensions": [
+      "jest.js"
+    ],
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testDirectoryName": "tests",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  },
+  "private": true,
+  "devDependencies": {
+    "babel-jest": "^22.1.0",
+    "bower": "^1.7.9",
+    "chai": "^4.1.2",
+    "create-react-class": "^15.6.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "jest-cli": "^22.1.4",
+    "jshint": "^2.9.2",
+    "jsxhint": "^0.15.1",
+    "laravel-elixir": "^6.0.0-17",
+    "laravel-elixir-browserify-official": "^0.1.3",
+    "mocha": "^5.0.0",
+    "mocha-sinon": "^2.0.0",
+    "mocha-traceur": "^2.1.0",
+    "popper.js": "^1.14.6",
+    "precommit-hook": "^3.0.0",
+    "sinon": "^4.2.2",
+    "sinon-chai": "^2.8.0",
+    "sinon-chrome": "^2.2.4",
+    "traceur": "^0.0.111"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "classnames": "^2.2.5",
+    "jquery": "^3.0.0",
+    "moment": "^2.13.0",
+    "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.1.0",
+    "react-dom": "^16.2.0",
+    "webextension-polyfill": "^0.2.1"
+  },
+  "jshintConfig": {
+    "asi": false,
+    "browser": true,
+    "curly": false,
+    "expr": true,
+    "indent": 4,
+    "loopfunc": true,
+    "node": true,
+    "trailing": true,
+    "undef": true,
+    "white": true
+  }
+}

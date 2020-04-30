@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "outDir": "out",
+    "lib": ["dom", "es7"],
+    "strictNullChecks": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "files": ["src/app.ts"],
+  "include": ["src/**/*", "typings/**/*"],
+  "exclude": ["node_modules"]
+}

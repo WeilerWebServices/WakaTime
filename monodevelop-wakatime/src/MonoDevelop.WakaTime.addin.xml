@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Addin id="WakaTime"
+	namespace="MonoDevelop"
+	name="WakaTime"
+	author="Zhmayev Yaroslav (salaros)"
+	url="https://github.com/salaros/monodevelop-wakatime"
+	copyright=""
+	description="WakaTime is a productivity and time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch."
+	category="IDE extensions"
+	version="3.0.2">
+
+	<!-- Resources -->
+	<Dependencies>
+		<Addin id="Ide" version="7.0" />
+		<Addin id="Core" version="7.0" />
+	</Dependencies>
+	<Runtime>
+		<Import assembly="MonoDevelop.WakaTime.dll" />
+		<Import assembly="INIFileParser.dll" />
+		<Import assembly="ICSharpCode.SharpZipLib.dll" />
+		<Import assembly="WakaTime.dll" />
+		<ScanExclude path="Mono.Posix.dll" />
+	</Runtime>
+	<!-- Extensions -->
+	<Extension path="/MonoDevelop/Ide/Commands">
+		<Command id="MonoDevelop.WakaTime.Commands.ShowSettingsWindow" defaultHandler="MonoDevelop.WakaTime.ShowSettingsWindowHandler" _label="WakaTime Settings" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/MainMenu/Tools">
+		<CommandItem id="MonoDevelop.WakaTime.Commands.ShowSettingsWindow" insertbefore="OptionsSection" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/StartupHandlers">
+		<Class class="MonoDevelop.WakaTime.ShowSettingsOnStartUpHandler" />
+	</Extension>
+</Addin>
